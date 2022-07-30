@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikjoon Park's Experiments</title>
+    <link rel = "icon" href = "favicon.ico?v=1">
+    <link rel = "stylesheet" href = "style.css" type = "text/css">
+    <script type="module">
+        import * as blog from './scripts/blog.js';
+        import examplePosts from './scripts/examples.js';
+
+        if (blog.countPosts() == 0) {
+            for (let post of examplePosts) {
+                blog.createPost(post);
+            }
+        }
+
+    </script>
+
+    <template id = "blogpost-template">
+        <post-article>
+            <post-title>
+                <h2>Title</h2>
+                <p>Date</p>
+            </post-title>
+            <post-summary>
+                <p>Example post summary</p>
+            </post-summary>
+            <post-buttons>
+                 <button class = "editPostBtn" data-title = "" data-date = "" data-summary = "">
+                    <img src = "./media/pencil.png"></button>
+                <button class = "deletePostBtn">
+                    <img src = "./media/trash.png"></button>
+            </post-buttons>
+           
+        </post-article>
+    </template>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href = "index.html">Back to Portfolio</a>
+            <a href = "crud.html">Unstyled Version of Blog</a>
+        </nav>
+        <h1>Blog</h1>
+    </header>
+    <main>
+
+        <section id = "posts">
+            <!--Posts will go here-->
+        </section>
+        <br><br>
+        <section>
+            <form id = "insert-post-form">
+                <fieldset>
+                    <legend>Add a new post!</legend>
+                    <label for = "postTitle"> Post Title: </label>
+                    <input id = "postTitle" type = "text" placeholder = "title" required>
+                    <label for = "postDate">Post Date: </label>
+                    <input id = "postDate" type = "date" required>
+                    <label for = "postSummary">Summary: </label>
+                    <textarea id = "postSummary" placeholder = "summary" required></textarea>
+                    <button type = "submit">Post</button>
+                    <input type = "button" value = "Cancel" id = "cancelAdd" formnovalidate>
+                </fieldset>
+            </form>
+        </section>
+
+        <section>
+            <form id = "editPostForm">
+                <fieldset>
+                    <legend>Edit a post!</legend>
+                    <label for = "postEditTitle"> Post Title: </label>
+                    <input id = "postEditTitle" type = "text" required>
+                    <label for = "postEditDate">Post Date: </label>
+                    <input id = "postEditDate" type = "date" required>
+                    <label for = "postEditSummary">Summary: </label>
+                    <textarea id = "postEditSummary" required></textarea>
+                    <button type = "submit">Edit</button>
+                    <button>Cancel</button>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+    <footer id = "crudFooter">
+        <button id = addPostBtn><img src = './media/book.png'> Add a Post! <img src = './media/book.png'></button>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.min.js" integrity="sha512-Qr/d6af6cN41/GIKiSmrQd4Y19/fo0YvWhD1VND8O+BsfbFBaZI4K7VVPoUZrd8PzMQ3CE71CkMjhrKf1NbhdQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
