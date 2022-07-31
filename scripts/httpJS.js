@@ -126,5 +126,6 @@ async function deleteFunc() {
                 document.getElementById('response').value = xhr.responseText;
             }
         }
+        xhr.send(null);
     } 
 };
