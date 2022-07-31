@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikjoon Park's Experiments</title>
+    <link rel = "icon" href = "./media/favicon.ico?v=1">
+    <link rel = "stylesheet" href = "styleTest.css" type = "text/css">
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href = "index.html">Back to Portfolio</a>
+            <a href = "webcomponent.html">Part 2</a>
+        </nav>
+        <h1>HW5 Part 1</h1>
+    </header>
+    <main>
+        <div id = formContainer>
+            <form id = "inputForm">
+                <label for = "recordID">Record ID:</label><br>
+                <input type = "number" id = "recordID" name = "recordID"><br>
+                <label for = "article_name">Article Name:</label><br>
+                <input type = "text" id = "article_name" name = "article_name"><br>
+                <label for = "article_body">Article Content:</label><br>
+                <textarea name = "article_body" id = "article_body"></textarea><br>
+                <input type = "text" id = "article_date" name = "article_date" readonly> 
+            </form>
+            
+            <section id = "buttons">
+                <button id = "postBtn">Post</button><br>
+                <button id = "getBtn">Get</button><br>
+                <button id = "putBtn">Put</button><br>
+                <button id = "deleteBtn">Delete</button><br>
+                <select id = "apiOpt">
+                    <option id = "fetch">fetch</option>
+                    <option id = "xhr">XMLHttpRequest </option>
+                </select>
+            </section>
+        </div>
+        
+        
+        <fieldset>
+            <legend>HTTPBin Response:</legend>
+            <pre><output id = "response"></output></pre>
+        </fieldset>
+    </main>
+    <footer>
+    </footer>
+    <script src = "./scripts/httpJS.js"></script>
+</body>
+</html>
